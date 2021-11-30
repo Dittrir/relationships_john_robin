@@ -1,24 +1,3 @@
-# README
+# Robin and John's Project 1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Screen Shot 2021-11-29 at 4 13 12 PM](https://user-images.githubusercontent.com/89048720/143962659-075fde7e-95f5-47db-9131-31c10f2d6248.png)
