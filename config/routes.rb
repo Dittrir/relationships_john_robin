@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get '/', to: 'welcome#example'
-
-  get '/parents', to: 'parents#index'
+  get '/', to: 'welcome#index'
+  
   get '/plumbershop', to: 'parents#id'
+  get '/parents', to: 'parents#index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

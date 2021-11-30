@@ -2,11 +2,7 @@ class ParentsController < ApplicationController
   def index
   end
 
-  def example
-    @data = "random data goes here"
+  def id
   end
 
-  def id 
-    
-  end
 end
