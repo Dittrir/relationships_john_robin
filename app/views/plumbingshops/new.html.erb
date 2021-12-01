@@ -1,0 +1,13 @@
+<form action="/plumbingshops" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new Plumbing Shop:</p>
+  <p>Shop Name</p>
+  <input type='text' name='plumbingshop[name]'/><br/>
+  <p>Service Offered?</p>
+  <input type='text' name='plumbingshop[service_offered]'/><br/>
+  <p>Construction Offered?</p>
+  <input type='text' name='plumbingshop[construction_offered]'/><br/>
+  <p>Number of Fleet Vehicles</p>
+  <input type='text' name='plumbing_shop_fleet_vehicles]'/><br/>
+  <input type='submit'/>
+</form>
