@@ -8,11 +8,13 @@ Rails.application.routes.draw do
 
   #Autoshops
   get '/autoshops', to: 'autoshops#index'
+  get '/autoshops/new', to: 'autoshops#new'
   get '/autoshops/:id', to: 'autoshops#show'
 
 
   #Vehicles
   get '/vehicles', to: 'vehicles#index'
+  get '/vehicles/new', to: 'vehicles#new'
   get '/vehicles/:id', to: 'vehicles#show'
 
 end

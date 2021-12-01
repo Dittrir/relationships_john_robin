@@ -15,18 +15,12 @@ ActiveRecord::Schema.define(version: 2021_12_01_072407) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "auto_shops", force: :cascade do |t|
+  create_table "autoshops", force: :cascade do |t|
     t.string "name"
     t.boolean "open"
     t.integer "vehicles_in_shop"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "autoshops", force: :cascade do |t|
-    t.string "name"
-    t.boolean "open"
-    t.integer "vehicles_in_shop"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -34,8 +28,8 @@ ActiveRecord::Schema.define(version: 2021_12_01_072407) do
     t.string "name"
     t.boolean "need_repair"
     t.integer "repair_cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

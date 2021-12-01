@@ -1,5 +1,8 @@
 class AutoshopsController < ApplicationController
   def index
-    @auto_shops = Autoshop.all
+    @autoshops = Autoshop.all
+  end
+
+  def show
   end
 end

@@ -1,4 +1,6 @@
-<h1>All Auto Shops</h1>
-<% @auto_shops.each do |auto_shop| %>
-  <h3><%= auto_shop.name %></h3>
+<h1>Auto Shops</h1>
+<% @autoshops.each do |autoshop| %>
+  <h3><%= autoshop.name %></h3>
+  <p>Open: <%= autoshop.open %></p>
+  <p>Vehicles in Shop: <%= autoshop.vehicles_in_shop %></p>
 <% end %>
