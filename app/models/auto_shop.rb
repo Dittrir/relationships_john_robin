@@ -1,0 +1,2 @@
+class Autoshop < ApplicationRecord
+end

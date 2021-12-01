@@ -1,5 +1,4 @@
-<html>
-  <head>
-    <h1>Vehicles</h1>
-  </head>
-</html>
+<h1>Vehicles</h1>
+<% @vehicles.each do |vehicle|
+  <%= vehicle.name %>
+<% end %>

@@ -1,4 +1,5 @@
 class VehiclesController < ApplicationController
   def index
-  end
+      @vehicles = Vehicle.all
+    end
 end

@@ -1,15 +1,16 @@
 class AutoshopsController < ApplicationController
   def index
+    @autoshops = Autoshop.all
   end
 
   def new
   end
 
   def show
-    @task = Task.find(params[:id])
+    @autoshops = Autoshop.find(params[:id])
   end
 
   def edit
-    @task = Task.find(params[:id])
+    @autoshops = Autoshop.find(params[:id])
   end
 end
