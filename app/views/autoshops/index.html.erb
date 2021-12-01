@@ -1,5 +1,4 @@
 <h1>All Auto Shops</h1>
-<% @autoshops.each do |autoshop| %>
-<%= autoshop.title %>
-
-<a href='/autoshops/new'>New Autoshop</a>
+<% @auto_shops.each do |auto_shop| %>
+  <h3><%= auto_shop.name %></h3>
+<% end %>
