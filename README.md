@@ -14,7 +14,7 @@
 
 ### CRUD
 
-[ ] done
+[x] done
 
 User Story 1, Parent Index (x2)
 

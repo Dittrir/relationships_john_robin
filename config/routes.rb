@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
+
+  #Main Page
   get '/', to: 'welcome#index'
-  
-  get '/plumbershop', to: 'parents#id'
+
+  #Parent Directory
   get '/parents', to: 'parents#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #Autoshops
+  get '/autoshops', to: 'autoshops#index'
+  get '/autoshops/:id', to: 'autoshops#show'
+
+
+  #Vehicles
+  get '/vehicles', to: 'vehicles#index'
+  get '/vehicles/:id', to: 'vehicles#show'
+
 end
