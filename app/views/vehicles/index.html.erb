@@ -1,4 +1,6 @@
 <h1>Vehicles</h1>
-<% @vehicles.each do |vehicle|
-  <%= vehicle.name %>
+<% @vehicles.each do |vehicle| %>
+  <h3><%= vehicle.name %></h3>
+  <p>Repair Needed: <%= vehicle.need_repair %></p>
+  <p>Repair Cost: <%= vehicle.repair_cost %></p>
 <% end %>
