@@ -4,5 +4,6 @@ class AutoshopsController < ApplicationController
   end
 
   def show
+    @autoshop = Autoshop.find(params[:id])
   end
 end
