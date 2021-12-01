@@ -1,9 +1,13 @@
 class PlumbingshopsController < ApplicationController
   def index 
-
+    @plumbing_shops = PlumbingShop.all
   end
 
   def new; end
+
+  def show
+    @plumbing_shop = PlumbingShop.find(params[:id])
+  end
 
   def create 
     shop = PlumbingShop.new({
