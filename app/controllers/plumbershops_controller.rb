@@ -5,9 +5,10 @@ class PlumbershopsController < ApplicationController
 
 #   def new; end
 
-#   # def show
-#   #   @plumbershop = PlumberShop.find(params[:id])
-#   # end
+  def show
+    require 'pry'; binding.pry
+    @plumbershop = Plumbershop.find(params[:id])
+  end
 
 #   def create 
 #     shop = PlumberShop.new({
