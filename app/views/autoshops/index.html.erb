@@ -1,6 +1,9 @@
+<a href="/parents">Back to Main</a>
 <h1>Auto Shops</h1>
 <% @autoshops.each do |autoshop| %>
-  <h3><%= autoshop.name %></h3>
+  <h3><a href="/autoshops/<%= autoshop.id %>"><%= autoshop.name %></a></h3>
   <p>Open: <%= autoshop.open %></p>
   <p>Vehicles in Shop: <%= autoshop.vehicles_in_shop %></p>
+  <p>Created at: <%= autoshop.created_at %></p>
+  <p>Updated at: <%= autoshop.updated_at %></p>
 <% end %>

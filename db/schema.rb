@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_12_01_234843) do
   end
 
   create_table "vehicles", force: :cascade do |t|
-    t.integer "shop_id"
     t.string "name"
     t.boolean "need_repair"
     t.integer "repair_cost"
