@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Vehicles Index Page", type: :feature do
   it 'can see all vehicles, whether or not they need a repair, and the repair cost' do
+    shop_1 = Autoshop.create!(id: 1, name: "Billy Bobs Repair Shop", open: true, vehicles_in_shop: 3)
     vehicle_1 = Vehicle.create!(autoshop_id: 1, name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500)
     vehicle_2 = Vehicle.create!(autoshop_id: 1, name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800)
     vehicle_3 = Vehicle.create!(autoshop_id: 1, name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0)
