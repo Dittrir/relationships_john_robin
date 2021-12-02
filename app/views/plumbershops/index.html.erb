@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <h1>All Plumber Shops</h1>
+    <% @plumbershops.each do |shop| %>
+    <li><a href="/plumbershops/<%= shop.id %>"><h3><%= shop.name %></h3></a></li>
+    <% end %>
+  </head>
+  <body style="background-color:powderblue;">
+  </body>
+</html>

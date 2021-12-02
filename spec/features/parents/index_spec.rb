@@ -8,16 +8,16 @@ RSpec.describe 'parents index page' do
     expect(page).to have_link("Add")
     expect(page).to have_link("Vehicles")
     expect(page).to have_link("Add")
-    expect(page).to have_link("Plumbing Shops")
+    expect(page).to have_link("Plumber Shops")
     expect(page).to have_link("Add")
     expect(page).to have_link("Plumbers")
     expect(page).to have_link("Add")
   end
    
-  it "click plumbingshops link" do 
+  it "click plumbershops link" do 
     visit "/parents"
-    click_link "Plumbing Shops"
-    expect(page).to have_current_path("/plumbingshops")
+    click_link "Plumber Shops"
+    expect(page).to have_current_path("/plumbershops")
   end
 
   it "click plumbers link" do 

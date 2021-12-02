@@ -1,0 +1,3 @@
+class Plumbershop < ApplicationRecord
+
+end

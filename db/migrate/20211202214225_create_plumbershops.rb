@@ -1,9 +1,8 @@
-class CreatePlumbingShops < ActiveRecord::Migration[5.2]
+class CreatePlumbershops < ActiveRecord::Migration[5.2]
   def change
-    create_table :plumbing_shops do |t|
+    create_table :plumbershops do |t|
       t.string :name
       t.boolean :service_offered
-      t.boolean :construction_offered
       t.integer :fleet_vehicles
 
       t.timestamps
