@@ -16,5 +16,7 @@ RSpec.describe 'displays' do
     expect(page).to have_content(@shop_1.service_offered)
     expect(page).to have_content(@shop_1.fleet_vehicles)
     expect(page).to_not have_content(@shop_2.name)
+    expect(page).to_not have_content(@shop_2.service_offered)
+    expect(page).to_not have_content(@shop_2.fleet_vehicles)
   end
 end
