@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_035706) do
+ActiveRecord::Schema.define(version: 2021_12_01_235952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "plumbers", force: :cascade do |t|
+    t.string "name"
+    t.boolean "on_call"
+    t.integer "age"
+    t.string "license"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "plumbing_shop_id"
+    t.index ["plumbing_shop_id"], name: "index_plumbers_on_plumbing_shop_id"
+  end
 
   create_table "plumbing_shops", force: :cascade do |t|
     t.string "name"
@@ -24,4 +35,5 @@ ActiveRecord::Schema.define(version: 2021_12_01_035706) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "plumbers", "plumbing_shops"
 end
