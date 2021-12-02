@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_072407) do
+ActiveRecord::Schema.define(version: 2021_12_01_234843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 2021_12_01_072407) do
     t.integer "repair_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.bigint "autoshop_id"
+    t.index ["autoshop_id"], name: "index_vehicles_on_autoshop_id"
   end
 
+  add_foreign_key "vehicles", "autoshops"
 end
