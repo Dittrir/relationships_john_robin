@@ -10,9 +10,12 @@ RSpec.describe "Vehicles Index Page", type: :feature do
 
     expect(page).to have_content(vehicle_1.name)
     expect(page).to have_content("Repair Needed: #{vehicle_1.need_repair}")
-    expect(page).to have_content("Vehicles in Shop: #{vehicle_1.repair_cost}")
+    expect(page).to have_content("Repair Cost: #{vehicle_1.repair_cost}")
     expect(page).to have_content(vehicle_2.name)
     expect(page).to have_content("Repair Needed: #{vehicle_2.need_repair}")
-    expect(page).to have_content("Vehicles in Shop: #{vehicle_2.repair_cost}")
+    expect(page).to have_content("Repair Cost: #{vehicle_2.repair_cost}")
+    expect(page).to have_content(vehicle_3.name)
+    expect(page).to have_content("Repair Needed: #{vehicle_3.need_repair}")
+    expect(page).to have_content("Repair Cost: #{vehicle_3.repair_cost}")
   end
 end
