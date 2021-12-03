@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/plumbershops/new', to: 'plumbershops#new'
 
   get '/plumbers', to: 'plumbers#index'
+  get '/plumbers/:id', to: 'plumbers#show'
 end

@@ -1,4 +1,10 @@
-<h1>All Plumbers<h1>
-
-<body style="background-color:powderblue;">
-</body>
+<html>
+  <head>
+    <h1>All Plumbers<h1>
+    <% @plumbers.each do |plumber| %>
+    <h3><li><%= plumber.name %></li></h3>
+    <% end %>
+  </head>
+  <body style="background-color:powderblue;">
+  </body>
+</html>
