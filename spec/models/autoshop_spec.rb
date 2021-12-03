@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Autoshop do
-  it {should have_many :songs}
+  it {should have_many :vehicles}
 
   describe 'instance methods' do
     describe '#sort_created_at' do
