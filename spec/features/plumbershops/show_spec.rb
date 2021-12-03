@@ -12,11 +12,12 @@ RSpec.describe 'displays' do
 
   it 'displays a single shop with attributes' do 
     visit "/plumbershops/#{@shop_1.id}"
+    expect(page).to have_content(@shop_1.id)
     expect(page).to have_content(@shop_1.name)
     expect(page).to have_content(@shop_1.service_offered)
     expect(page).to have_content(@shop_1.fleet_vehicles)
+    expect(page).to have_content(@shop_1.created_at)
+    expect(page).to have_content(@shop_1.updated_at)
     expect(page).to_not have_content(@shop_2.name)
-    expect(page).to_not have_content(@shop_2.service_offered)
-    expect(page).to_not have_content(@shop_2.fleet_vehicles)
   end
 end
