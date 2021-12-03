@@ -29,4 +29,10 @@ RSpec.describe 'Autoshops vehicles index' do
 
     expect(page).to have_content("Repair Needed: true")
   end
+
+  it 'shows the vehicles repair cost' do
+    visit "autoshops/#{@shop_1.id}/vehicles"
+
+    expect(page).to have_content("Repair Cost: 3500")
+  end
 end
