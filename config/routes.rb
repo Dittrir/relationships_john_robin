@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get '/plumbershops', to: 'plumbershops#index'
   get '/plumbershops/:id', to: 'plumbershops#show'
-  get '/plumbershops/new', to: 'plumbershops#new'
+  get '/plumbershops/:plumbershop_id/plumbers', to: 'plumbershop_plumbers#index'
+  # get '/plumbershops/new', to: 'plumbershops#new'
 
   get '/plumbers', to: 'plumbers#index'
   get '/plumbers/:id', to: 'plumbers#show'
