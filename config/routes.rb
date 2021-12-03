@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/autoshops', to: 'autoshops#index'
   get '/autoshops/new', to: 'autoshops#new'
   get '/autoshops/:id', to: 'autoshops#show'
-  get '/autoshops/:id/vehicles', to: 'autoshops#vehicles_in_shop'
+  get '/autoshops/:autoshop_id/vehicles', to: 'autoshop_vehicles#index'
 
   #Vehicles
   get '/vehicles', to: 'vehicles#index'
