@@ -1,6 +1,7 @@
 class Autoshop < ApplicationRecord
   has_many :vehicles
 
-  def sort_created_at
+  def self.sort_created_at
+    Autoshop.all.order(:created_at)
   end
 end
