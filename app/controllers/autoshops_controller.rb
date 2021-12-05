@@ -25,6 +25,12 @@ class AutoshopsController < ApplicationController
     redirect_to '/autoshops'
   end
 
+  def destroy
+    @autoshop = Autoshop.find(params[:id])
+    @autoshop.destroy
+    redirect_to '/autoshops'
+  end
+
 private
   def autoshop_params
     params.permit(:name)
