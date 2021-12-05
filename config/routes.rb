@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/autoshops', to: 'autoshops#create'
   get '/autoshops/:id/edit', to: 'autoshops#edit'
   patch '/autoshops/:id', to: 'autoshops#update'
+  delete '/autoshops/:id', to: 'autoshops#destroy'
 
   #Vehicles
   get '/vehicles', to: 'vehicles#index'
