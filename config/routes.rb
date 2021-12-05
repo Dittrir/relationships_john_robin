@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/autoshops/new', to: 'autoshops#new'
   get '/autoshops/:id', to: 'autoshops#show'
   get '/autoshops/:autoshop_id/vehicles', to: 'autoshop_vehicles#index'
+  post '/autoshops', to: 'autoshops#create'
+  get '/autoshops/:id/edit', to: 'autoshops#edit'
+  patch '/autoshops/:id', to: 'autoshops#update'
 
   #Vehicles
   get '/vehicles', to: 'vehicles#index'
