@@ -6,4 +6,6 @@
   <p>Vehicles in Shop: <%= autoshop.vehicles_in_shop %></p>
   <p>Created at: <%= autoshop.created_at %></p>
   <p>Updated at: <%= autoshop.updated_at %></p>
+  <p><%=button_to "Edit #{autoshop.name}", "/autoshops/#{autoshop.id}/edit", method: :get %></p>
 <% end %>
+<%= link_to "New Auto Shop", "/autoshops/new" %>
