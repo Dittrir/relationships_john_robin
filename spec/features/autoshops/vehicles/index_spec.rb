@@ -3,10 +3,10 @@ require 'rails_helper'
 
 RSpec.describe 'Autoshops vehicles index' do
   before(:each) do
-    @shop_1 = Autoshop.create!(id:1, name: "Billy Bobs Repair Shop", open: true, vehicles_in_shop: 3)
-    @vehicle_1 = @shop_1.vehicles.create!(name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500)
-    @vehicle_2 = @shop_1.vehicles.create!(name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800)
-    @vehicle_3 = @shop_1.vehicles.create!(name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0)
+    @shop_1 = Autoshop.create!(name: "Billy Bobs Repair Shop", open: true, vehicles_in_shop: 3)
+    @vehicle_1 = @shop_1.vehicles.create!(name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500, autoshop_id: @shop_1.id)
+    @vehicle_2 = @shop_1.vehicles.create!(name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800, autoshop_id: @shop_1.id)
+    @vehicle_3 = @shop_1.vehicles.create!(name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0, autoshop_id: @shop_1.id)
   end
 
   it 'allows the user to return to the main page' do
@@ -42,4 +42,11 @@ RSpec.describe 'Autoshops vehicles index' do
 
     expect(page).to have_content("Repair Cost: 3500")
   end
+
+  it 'allows the user to add a new adoptable child for that parent'
+  #   visit "autoshops/#{@shop_1.id}/vehicles"
+  #
+  #   click_link('Add Vehicle to Autoshop')
+  #   expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles_table/new")
+  # end
 end

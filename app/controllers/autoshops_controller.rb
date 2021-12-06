@@ -33,6 +33,6 @@ class AutoshopsController < ApplicationController
 
 private
   def autoshop_params
-    params.permit(:name)
+    params.permit(:name, :open, :vehicles_in_shop)
   end
 end
