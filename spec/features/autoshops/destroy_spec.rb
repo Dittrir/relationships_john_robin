@@ -1,3 +1,4 @@
+#spec/features/autoshops/destroy_spec.rb.rb
 require 'rails_helper'
 
 RSpec.describe 'destroying an auto shop' do
@@ -5,7 +6,7 @@ RSpec.describe 'destroying an auto shop' do
     autoshop = Autoshop.create!(name: 'Sad Car Repair')
 
     visit '/autoshops'
-  
+
     click_button 'Delete'
 
     expect(current_path).to eq('/autoshops')

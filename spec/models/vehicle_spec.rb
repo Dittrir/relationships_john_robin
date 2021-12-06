@@ -1,3 +1,4 @@
+#spec/models/vehicle_spec.rb
 require 'rails_helper'
 
 RSpec.describe Vehicle, type: :model do

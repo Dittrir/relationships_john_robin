@@ -1,3 +1,4 @@
+#spec/features/autoshops/show_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Autoshops Show Page", type: :feature do
@@ -8,25 +9,35 @@ RSpec.describe "Autoshops Show Page", type: :feature do
     @vehicle_3 = Vehicle.create!(name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0, autoshop_id: @shop_1.id)
   end
 
-  it 'displays the auto shop name' do
+  it 'allows the user to return to the main page' do
+    visit "/autoshops/#{@shop_1.id}"
 
+    expect(page).to have_content("Back to Main")
+  end
+
+  it 'displays the auto shop name' do
     visit "/autoshops/#{@shop_1.id}"
 
     expect(page).to have_content(@shop_1.name)
   end
 
   it 'displays the number of children associated with this parent' do
-
     visit "/autoshops/#{@shop_1.id}"
 
     expect(page).to have_content("Number of Associated Children: 3")
   end
 
   it 'allows the user to return to the main page' do
-
     visit "/autoshops/#{@shop_1.id}"
 
     expect(page).to have_content("Back to Main Directory")
     expect(page).to have_content("Back to Auto Shop Directory")
   end
+
+  it 'viewer can see a link to take them to that parents child_table_name page'
+  #   visit "/autoshops/#{@shop_1.id}"
+  #
+  #   click_link('View the Vehicles Table')
+  #   expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles_table")
+  # end
 end

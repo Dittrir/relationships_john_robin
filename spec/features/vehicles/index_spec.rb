@@ -1,3 +1,4 @@
+#spec/features/vehicles/index_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Vehicles Index Page", type: :feature do
@@ -36,18 +37,11 @@ RSpec.describe "Vehicles Index Page", type: :feature do
     expect(page).to have_content("Back to Main")
   end
 
-  it 'allows the viewer to visit the child index page from child index page' do
+  it 'allows the viewer to visit the parent index page from child index page' do
     visit "/vehicles"
 
-    click_link('Go to Vehicles')
-    expect(current_path).to eq('/vehicles')
-  end
-
-  it 'allows the viewer to visit the child index page from child new page' do
-    visit "/vehicles/new"
-
-    click_link('Go to Vehicles')
-    expect(current_path).to eq('/vehicles')
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
   end
 
   it 'allows the viewer to visit the child index page from new child page' do

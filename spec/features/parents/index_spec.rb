@@ -1,3 +1,4 @@
+#parents/index_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'parents index page' do

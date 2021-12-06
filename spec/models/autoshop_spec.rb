@@ -1,3 +1,4 @@
+#spec/models/autoshop_spec.rb
 require 'rails_helper'
 
 RSpec.describe Autoshop do

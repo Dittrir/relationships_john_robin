@@ -1,3 +1,4 @@
+#autoshops/vehicles/index_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Autoshops Index Page", type: :feature do
@@ -6,7 +7,13 @@ RSpec.describe "Autoshops Index Page", type: :feature do
     @shop_2 = Autoshop.create!(name: "Bongos", open: false, vehicles_in_shop: 20)
   end
 
-  it 'has text content' do
+  it 'allows the user to return to the main page' do
+    visit "/autoshops"
+
+    expect(page).to have_content("Back to Main")
+  end
+
+  it 'has page text' do
     visit "/autoshops"
 
     expect(page).to have_content("Auto Shops")
@@ -22,19 +29,6 @@ RSpec.describe "Autoshops Index Page", type: :feature do
     expect(page).to have_content(@shop_2.name)
     expect(page).to have_content("Open: #{@shop_2.open}")
     expect(page).to have_content("Vehicles in Shop: #{@shop_2.vehicles_in_shop}")
-  end
-
-  it 'allows the user to return to the main page' do
-    visit "/autoshops"
-
-    expect(page).to have_content("Back to Main")
-  end
-
-  it 'allows the viewer to visit the parent index page from child index page' do
-    visit "/vehicles"
-
-    click_link('Go to Auto Shops')
-    expect(current_path).to eq('/autoshops')
   end
 
   it 'allows the viewer to visit the parent index page from child new page' do

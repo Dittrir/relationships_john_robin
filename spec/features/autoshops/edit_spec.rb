@@ -1,6 +1,13 @@
+#spec/features/autoshops/edit_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'the autoshop edit' do
+  it 'allows the user to return to the main page' do
+    visit '/autoshops'
+
+    expect(page).to have_content("Back to Main")
+  end
+
   it 'links to the edit page' do
     autoshop = Autoshop.create!(name: 'Heavy Metal Repair Shop')
 

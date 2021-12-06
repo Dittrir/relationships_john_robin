@@ -1,6 +1,13 @@
+#spec/features/autoshops/new_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'The Auto Shop creation' do
+  it 'allows the user to return to the main page' do
+    visit 'autoshops/new'
+
+    expect(page).to have_content("Back to Main")
+  end
+
   it 'links to the new page from the autoshop index' do
     visit '/autoshops'
 

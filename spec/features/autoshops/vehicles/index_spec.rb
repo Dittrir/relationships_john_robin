@@ -1,3 +1,4 @@
+#spec/features/autoshops/vehicles/index_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'Autoshops vehicles index' do
@@ -6,6 +7,12 @@ RSpec.describe 'Autoshops vehicles index' do
     @vehicle_1 = @shop_1.vehicles.create!(name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500)
     @vehicle_2 = @shop_1.vehicles.create!(name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800)
     @vehicle_3 = @shop_1.vehicles.create!(name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0)
+  end
+
+  it 'allows the user to return to the main page' do
+    visit "autoshops/#{@shop_1.id}/vehicles"
+
+    expect(page).to have_content("Back to Main")
   end
 
   it 'shows all the names of the vehicles in each autoshop' do
