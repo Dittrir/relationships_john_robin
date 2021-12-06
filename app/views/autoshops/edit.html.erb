@@ -1,3 +1,5 @@
+<a href="/autoshops">Go to Autoshops</a>
+
 <%= form_with url: "/autoshops/#{@autoshop.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>

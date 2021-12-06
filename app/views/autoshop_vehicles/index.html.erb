@@ -1,3 +1,5 @@
+<a href="/autoshops">Go to Auto Shops</a>
+
 <% @vehicles.each do |vehicle| %>
   <%= link_to vehicle.name, "/vehicles/#{vehicle.id}" %>
   <p>Repair Needed: <%= vehicle.need_repair %></p>

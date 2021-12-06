@@ -2,6 +2,7 @@
 
 <h1><%= @autoshop.name %></h1>
 <a href="/autoshops/<%= @autoshop.id %>/vehicles">Vehicles in Shop</a>
+<p>Number of Associated Children: <%= @autoshop.associated_children_count %></p>
 <p>Open: <%= @autoshop.open %></p>
 <p>Number of Vehicles in Shop: <%= @autoshop.vehicles_in_shop %></p>
 <p>Created at: <%= @autoshop.created_at %></p>
