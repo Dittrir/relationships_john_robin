@@ -2,14 +2,17 @@ require 'rails_helper'
 
 RSpec.describe 'plumbers show page' do
   before(:each) do
+    @shop_1 = Plumbershop.create!(
+      name: "IPS", service_offered: true, fleet_vehicles: 10
+      ) 
     @plumber_1 = Plumber.create!(
-      name: "Frank", license: "Journeyman", on_call: false, years_experience: 6
+      name: "Frank", license: "Journeyman", on_call: false, years_experience: 6, plumbershop_id: @shop_1.id
       )
     @plumber_2 = Plumber.create!(
-      name: "Zelma", license: "Master", on_call: true, years_experience: 10
+      name: "Zelma", license: "Master", on_call: true, years_experience: 10, plumbershop_id: @shop_1.id
       )
     @plumber_3 = Plumber.create!(
-      name: "Chuck", license: "Journeyman", on_call: false, years_experience: 30
+      name: "Chuck", license: "Journeyman", on_call: false, years_experience: 30, plumbershop_id: @shop_1.id
       )
   end
 

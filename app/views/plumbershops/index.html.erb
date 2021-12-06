@@ -3,6 +3,7 @@
     <h1>All Plumber Shops</h1>
     <% @plumbershops.each do |shop| %>
     <h3><li><%= shop.name %></li></h3>
+    <h3><li><%= shop.created_at %></li></h3>
     <% end %>
   </head>
   <body style="background-color:powderblue;">

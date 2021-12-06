@@ -6,11 +6,11 @@ RSpec.describe 'Plumber Shops' do
       name: "IPS", service_offered: true, fleet_vehicles: 10
     )
     @shop_2 = Plumbershop.create!(
-      name: "NMI", service_offered: false, fleet_vehicles: 20
+      name: "NMI", service_offered: true, fleet_vehicles: 10
     )
     @shop_3 = Plumbershop.create!(
-      name: "Bershinsky Plumbing & Heating", service_offered: true, fleet_vehicles: 8
-    ) 
+      name: "Bershinsky", service_offered: false, fleet_vehicles: 20
+    )
   end
   
   it "displays all plumber shops" do 
@@ -19,6 +19,13 @@ RSpec.describe 'Plumber Shops' do
     expect(page).to have_content(@shop_1.name)
     expect(page).to have_content(@shop_2.name)
     expect(page).to have_content(@shop_3.name)
+  end
+
+  it "sorts plumber shops in the order they were created" do 
+    visit "/plumbershops"
+
+    expect(@shop_3.name).to appear_before(@shop_2.name)
+    expect(@shop_2.name).to appear_before(@shop_1.name)
   end
 end
 

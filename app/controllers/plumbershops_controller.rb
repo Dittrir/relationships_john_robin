@@ -1,6 +1,6 @@
 class PlumbershopsController < ApplicationController
   def index 
-    @plumbershops = Plumbershop.all
+    @plumbershops = Plumbershop.sorted_by_most_recetly_created
   end
 
 #   def new; end
