@@ -10,14 +10,12 @@ RSpec.describe "Vehicles Index Page", type: :feature do
   end
 
   it 'has text content' do
-
     visit "/vehicles"
 
     expect(page).to have_content("Vehicles")
   end
 
   it 'can see all vehicles, whether or not they need a repair, and the repair cost' do
-
     visit "/vehicles"
 
     expect(page).to have_content(@vehicle_1.name)
@@ -33,9 +31,36 @@ RSpec.describe "Vehicles Index Page", type: :feature do
   end
 
   it 'allows the user to return to the main page' do
-
     visit "/vehicles"
 
     expect(page).to have_content("Back to Main")
+  end
+
+  it 'allows the viewer to visit the child index page from child index page' do
+    visit "/vehicles"
+
+    click_link('Go to Vehicles')
+    expect(current_path).to eq('/vehicles')
+  end
+
+  it 'allows the viewer to visit the child index page from child new page' do
+    visit "/vehicles/new"
+
+    click_link('Go to Vehicles')
+    expect(current_path).to eq('/vehicles')
+  end
+
+  it 'allows the viewer to visit the child index page from new child page' do
+    visit "/vehicles/new"
+
+    click_link('Go to Vehicles')
+    expect(current_path).to eq('/vehicles')
+  end
+
+  it 'allows the viewer to visit the child index page from autoshop vehicles index page' do
+    visit "autoshops/#{@shop_1.id}/vehicles"
+
+    click_link('Go to Vehicles')
+    expect(current_path).to eq('/vehicles')
   end
 end
