@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   patch '/autoshops/:id', to: 'autoshops#update'
   get  '/autoshops/:autoshop_id/vehicles_table/new', to: 'vehicles#new'
   delete '/autoshops/:id', to: 'autoshops#destroy'
+  get '/autoshops/:id/vehicles/new', to: 'autoshop_vehicles#new'
 
   #Vehicles
   get '/vehicles', to: 'vehicles#index'

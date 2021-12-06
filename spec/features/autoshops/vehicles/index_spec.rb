@@ -15,7 +15,7 @@ RSpec.describe 'Autoshops vehicles index' do
     expect(page).to have_content("Back to Main")
   end
 
-  it 'shows all the names of the vehicles in each autoshop' do
+  it 'shows all the attributes of the vehicles in each autoshop' do
     visit "autoshops/#{@shop_1.id}/vehicles"
 
     expect(page).to have_content(@vehicle_1.name)
@@ -43,10 +43,10 @@ RSpec.describe 'Autoshops vehicles index' do
     expect(page).to have_content("Repair Cost: 3500")
   end
 
-  it 'allows the user to add a new adoptable child for that parent'
-  #   visit "autoshops/#{@shop_1.id}/vehicles"
-  #
-  #   click_link('Add Vehicle to Autoshop')
-  #   expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles_table/new")
-  # end
+  it 'allows the user to add a new adoptable child for that parent' do
+    visit "autoshops/#{@shop_1.id}/vehicles"
+
+    click_link('Add Vehicle to Autoshop')
+    expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles/new")
+  end
 end
