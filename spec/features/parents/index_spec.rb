@@ -7,6 +7,20 @@ RSpec.describe 'parents index page' do
     expect(page).to have_content("Here are our parent records")
   end
 
+  it 'allows the viewer to visit the parent index page' do
+    visit "/parents"
+
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
+  end
+
+  it 'allows the viewer to visit the child index page' do
+    visit "/parents"
+
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
+  end
+
   it 'allow the user to add auto shops' do
     visit "/parents"
 

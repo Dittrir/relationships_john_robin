@@ -3,11 +3,10 @@ require 'rails_helper'
 
 RSpec.describe "Vehicles Index Page", type: :feature do
   before(:each) do
-    @shop_1 = Autoshop.create!(id: 1, name: "Billy Bobs Repair Shop", open: true, vehicles_in_shop: 3)
-    @vehicle_1 = Vehicle.create!(autoshop_id: 1, name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500)
-    @vehicle_2 = Vehicle.create!(autoshop_id: 1, name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800)
-    @vehicle_3 = Vehicle.create!(autoshop_id: 1, name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0)
-
+    @shop_1 = Autoshop.create!(name: "Billy Bobs Repair Shop", open: true, vehicles_in_shop: 3)
+    @vehicle_1 = Vehicle.create!(name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500, autoshop_id: @shop_1.id)
+    @vehicle_2 = Vehicle.create!(name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800, autoshop_id: @shop_1.id)
+    @vehicle_3 = Vehicle.create!(name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0, autoshop_id: @shop_1.id)
   end
 
   it 'has text content' do
@@ -37,18 +36,18 @@ RSpec.describe "Vehicles Index Page", type: :feature do
     expect(page).to have_content("Back to Main")
   end
 
-  it 'allows the viewer to visit the parent index page from child index page' do
+  it 'allows the viewer to visit the parent index page' do
     visit "/vehicles"
 
     click_link('Go to Auto Shops')
     expect(current_path).to eq('/autoshops')
   end
 
-  it 'allows the viewer to visit the child index page from new child page' do
-    visit "/vehicles/new"
+  it 'allows the viewer to visit the child index page' do
+    visit "/vehicles"
 
-    click_link('Go to Vehicles')
-    expect(current_path).to eq('/vehicles')
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
   end
 
   it 'allows the viewer to visit the child index page from autoshop vehicles index page' do

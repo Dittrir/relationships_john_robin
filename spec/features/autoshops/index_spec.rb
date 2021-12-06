@@ -31,14 +31,14 @@ RSpec.describe "Autoshops Index Page", type: :feature do
     expect(page).to have_content("Vehicles in Shop: #{@shop_2.vehicles_in_shop}")
   end
 
-  it 'allows the viewer to visit the parent index page from child new page' do
+  it 'allows the viewer to visit the parent index page' do
     visit "/vehicles/new"
 
     click_link('Go to Auto Shops')
     expect(current_path).to eq('/autoshops')
   end
 
-  it 'allows the viewer to visit the parent index page from new parent page' do
+  it 'allows the viewer to visit the child index page' do
     visit "/autoshops/new"
 
     click_link('Go to Auto Shops')

@@ -7,6 +7,19 @@ RSpec.describe 'The Auto Shop creation' do
 
     expect(page).to have_content("Back to Main")
   end
+  it 'allows the viewer to visit the parent index page' do
+    visit 'autoshops/new'
+
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
+  end
+
+  it 'allows the viewer to visit the child index page' do
+    visit 'autoshops/new'
+
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
+  end
 
   it 'links to the new page from the autoshop index' do
     visit '/autoshops'
@@ -19,12 +32,13 @@ RSpec.describe 'The Auto Shop creation' do
     visit 'autoshops/new'
 
     fill_in('Name', with: 'Heavy Metal Repair')
-    # fill_in('Open', with: true)
-    # fill_in('Number of Vehicles Currently in the Shop', with: '4')
+    check "Open"
+    fill_in('Vehicles in shop', with: 4)
     click_button('Create Auto Shop')
 
     new_autoshop_id = Autoshop.last.id
     expect(current_path).to eq("/autoshops/#{new_autoshop_id}")
     expect(page).to have_content("Heavy Metal Repair")
+    expect(page).to have_content(4)
   end
 end

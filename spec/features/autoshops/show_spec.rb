@@ -15,6 +15,20 @@ RSpec.describe "Autoshops Show Page", type: :feature do
     expect(page).to have_content("Back to Main")
   end
 
+  it 'allows the viewer to visit the parent index page' do
+    visit "/autoshops/#{@shop_1.id}"
+
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
+  end
+
+  it 'allows the viewer to visit the child index page' do
+    visit "/autoshops/#{@shop_1.id}"
+
+    click_link('Go to Auto Shops')
+    expect(current_path).to eq('/autoshops')
+  end
+
   it 'displays the auto shop name' do
     visit "/autoshops/#{@shop_1.id}"
 
@@ -25,13 +39,6 @@ RSpec.describe "Autoshops Show Page", type: :feature do
     visit "/autoshops/#{@shop_1.id}"
 
     expect(page).to have_content("Number of Associated Children: 3")
-  end
-
-  it 'allows the user to return to the main page' do
-    visit "/autoshops/#{@shop_1.id}"
-
-    expect(page).to have_content("Back to Main Directory")
-    expect(page).to have_content("Back to Auto Shop Directory")
   end
 
   it 'viewer can see a link to take them to that parents child_table_name page'
