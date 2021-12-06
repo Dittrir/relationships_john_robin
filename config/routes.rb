@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get  '/autoshops/:autoshop_id/vehicles_table/new', to: 'vehicles#new'
   delete '/autoshops/:id', to: 'autoshops#destroy'
   get '/autoshops/:id/vehicles/new', to: 'autoshop_vehicles#new'
+  post '/autoshops/:id/vehicles', to: 'autoshop_vehicles#create'
 
   #Vehicles
   get '/vehicles', to: 'vehicles#index'
