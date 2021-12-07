@@ -57,4 +57,12 @@ RSpec.describe 'Autoshops vehicles index' do
 
     expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles")
   end
+
+  it 'has a button to edit the vehicle info' do
+    visit "autoshops/#{@shop_1.id}/vehicles"
+
+    click_button "Edit #{@vehicle_1.name}"
+
+    expect(current_path).to eq("/vehicles/#{@vehicle_1.id}/edit")
+  end
 end
