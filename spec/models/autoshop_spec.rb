@@ -16,5 +16,18 @@ RSpec.describe Autoshop do
         expect(Autoshop.sort_created_at).to eq([@shop_1, @shop_3, @shop_2])
       end
     end
+
+    describe '#associated_children_count' do
+      before(:each) do
+        @shop_1 = Autoshop.create!(name: "Billy Bobs Repair Shop", open: true, vehicles_in_shop: 3)
+        @vehicle_1 = @shop_1.vehicles.create!(name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500, autoshop_id: @shop_1.id)
+        @vehicle_2 = @shop_1.vehicles.create!(name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800, autoshop_id: @shop_1.id)
+        @vehicle_3 = @shop_1.vehicles.create!(name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0, autoshop_id: @shop_1.id)
+      end
+
+      it 'returns the count of associated child classes' do
+        expect(@shop_1.associated_children_count).to eq(3)
+      end
+    end
   end
 end

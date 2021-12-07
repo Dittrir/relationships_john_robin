@@ -49,4 +49,12 @@ RSpec.describe 'Autoshops vehicles index' do
     click_link('Add Vehicle to Autoshop')
     expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles/new")
   end
+
+  it 'provides a link that sorts the children in alphabetical order' do
+    visit "autoshops/#{@shop_1.id}/vehicles"
+
+    click_link "Sort vehicles alphabetically"
+
+    expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles")
+  end
 end

@@ -2,6 +2,8 @@
 <a href="/autoshops">Go to Auto Shops</a>
 <a href="/vehicles">Go to Vehicles</a>
 <br><br>
+<%= link_to "Sort vehicles alphabetically", "/autoshops/#{@autoshop.id}/vehicles?sort=asc" %>
+<br><br>
 <% @vehicles.each do |vehicle| %>
   <%= link_to vehicle.name, "/vehicles/#{vehicle.id}" %>
   <p>Repair Needed: <%= vehicle.need_repair %></p>

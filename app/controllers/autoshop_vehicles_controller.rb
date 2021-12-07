@@ -1,7 +1,12 @@
 class AutoshopVehiclesController < ApplicationController
   def index
     @autoshop = Autoshop.find(params[:autoshop_id])
-    @vehicles = @autoshop.vehicles
+    
+    if params[:sort]
+      @vehicles = @autoshop.vehicles.order_by_name
+    else
+      @vehicles = @autoshop.vehicles
+    end
   end
 
   def new
