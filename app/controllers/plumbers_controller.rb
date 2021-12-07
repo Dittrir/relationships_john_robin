@@ -1,6 +1,6 @@
 class PlumbersController < ApplicationController
   def index
-    @plumbers = Plumber.all
+    @plumbers = Plumber.all.on_call?
   end
 
   def show 

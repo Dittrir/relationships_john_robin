@@ -10,9 +10,7 @@ RSpec.describe 'plumbers show page' do
 
   it 'displays all plumbers' do 
     visit "/plumbers"
-    expect(page).to have_content(@plumber_1.name)
     expect(page).to have_content(@plumber_2.name)
-    expect(page).to have_content(@plumber_3.name)
   end
 
   
@@ -36,5 +34,13 @@ RSpec.describe 'plumbers show page' do
     visit "/plumbers"
 
     expect(page).to have_link("New Plumber")
+  end
+
+  it 'only shows plumbers that are on call' do 
+    visit "/plumbers"
+
+    expect(page).to have_content(@plumber_2.name)
+    expect(page).to_not have_content(@plumber_1.name)
+    expect(page).to_not have_content(@plumber_3.name)
   end
 end
