@@ -6,11 +6,13 @@
   <%= form.label :name %>
   <%= form.text_field :name %>
 
-  <%= form.label :open %>
-  <%= form.check_box :open %>
+  <%= form.label :need_repair %>
+  <%= form.check_box :need_repair %>
 
-  <%= form.label :vehicles_in_shop %>
-  <%= form.text_field :vehicles_in_shop %>
+  <%= form.label :repair_cost %>
+  <%= form.text_field :repair_cost %>
+
+  <%= form.hidden_field :autoshop_id, value: @autoshop.id %>
 
   <%= form.submit "Create Vehicle" %>
 <% end %>

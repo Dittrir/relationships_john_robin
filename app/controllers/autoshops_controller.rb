@@ -22,7 +22,7 @@ class AutoshopsController < ApplicationController
   def update
     @autoshop = Autoshop.find(params[:id])
     @autoshop.update(autoshop_params)
-    redirect_to '/autoshops'
+    redirect_to "/autoshops/#{@autoshop.id}"
   end
 
   def destroy

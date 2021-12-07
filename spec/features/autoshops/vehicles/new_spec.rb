@@ -25,8 +25,8 @@ RSpec.describe 'The Auto Shop Vehicles creation' do
   it 'allows the viewer to visit the child index page' do
     visit "autoshops/#{@shop_1.id}/vehicles/new"
 
-    click_link('Go to Auto Shops')
-    expect(current_path).to eq('/autoshops')
+    click_link('Go to Vehicles')
+    expect(current_path).to eq('/vehicles')
   end
 
   it 'can create a Vehicle' do
@@ -35,14 +35,14 @@ RSpec.describe 'The Auto Shop Vehicles creation' do
     click_link('Add Vehicle to Autoshop')
     expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles/new")
 
-    fill_in('Name', with: 'Heavy Metal Repair')
-    check "Open"
-    fill_in('Vehicles in shop', with: 4)
+    fill_in('Name', with: 'Toyota Tacoma')
+    check "Need repair"
+    fill_in('Repair cost', with: 4000)
     click_button('Create Vehicle')
 
-    new_autoshop_id = Autoshop.last.id #see if we even need this...
-    expect(current_path).to eq("autoshops/#{@shop_1.id}/vehicles")
-    expect(page).to have_content("Heavy Metal Repair")
-    expect(page).to have_content(4)
+    new_vehicle_id = Vehicle.last.id #see if we even need this...
+    expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles")
+    expect(page).to have_content("Toyota Tacoma")
+    expect(page).to have_content(4000)
   end
 end

@@ -5,16 +5,17 @@ class AutoshopVehiclesController < ApplicationController
   end
 
   def new
+    @autoshop = Autoshop.find(params[:id])
   end
 
   def create
     @autoshop = Autoshop.find(params[:autoshop_id])
-    vehicle = @autoshop.vehicles.create(autoshop_params)
+    vehicle = @autoshop.vehicles.create(vehicle_params)
     redirect_to "/autoshops/#{@autoshop.id}/vehicles"
   end
 
 private
-  def autoshop_params
+  def vehicle_params
     params.permit(:name, :need_repair, :repair_cost)
   end
 end
