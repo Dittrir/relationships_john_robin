@@ -1,0 +1,9 @@
+<a href="/parents">Back to Main</a>
+<a href="/autoshops">Go to Auto Shops</a>
+<a href="/vehicles">Go to Vehicles</a>
+<form action="/vehicle" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new vehicle name:</p>
+  <input type='text' name='vehicle[name]'/><input type='submit'/>
+  <p>Does it need a repair?<input type="checkbox" id="vehicle[open]" name="open" value=true /></p>
+</form>

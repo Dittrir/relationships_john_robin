@@ -1,7 +1,32 @@
 Rails.application.routes.draw do
+
+  #Main Page
   get '/', to: 'welcome#index'
-  
-  get '/plumbershop', to: 'parents#id'
+
+  #Parent Directory
   get '/parents', to: 'parents#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #Autoshops
+  get '/autoshops', to: 'autoshops#index'
+  get '/autoshops/new', to: 'autoshops#new'
+  get '/autoshops/:id', to: 'autoshops#show'
+  get '/autoshops/:autoshop_id/vehicles', to: 'autoshop_vehicles#index'
+  get '/autoshops/:id/vehicles_table', to: 'vehicles#table'
+  post '/autoshops', to: 'autoshops#create'
+  get '/autoshops/:id/edit', to: 'autoshops#edit'
+  patch '/autoshops/:id', to: 'autoshops#update'
+  get  '/autoshops/:autoshop_id/vehicles_table/new', to: 'vehicles#new'
+  delete '/autoshops/:id', to: 'autoshops#destroy'
+  get '/autoshops/:id/vehicles/new', to: 'autoshop_vehicles#new'
+  post '/autoshops/:id/vehicles', to: 'autoshop_vehicles#create'
+
+  #Vehicles
+  get '/vehicles', to: 'vehicles#index'
+  get '/vehicles/new', to: 'vehicles#new'
+  get '/vehicles/:id', to: 'vehicles#show'
+  post '/vehicles', to: 'vehicles#create'
+  get '/vehicles/:id/edit', to: 'vehicles#edit'
+  patch '/vehicles/:id', to: 'vehicles#update'
+  delete '/vehicles/:id', to: 'vehicles#destroy'
+
 end
