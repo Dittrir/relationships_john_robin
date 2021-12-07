@@ -3,10 +3,10 @@
 <a href="/vehicles">Go to Vehicles</a>
 <br><br>
 <%= link_to "Sort vehicles alphabetically", "/autoshops/#{@autoshop.id}/vehicles?sort=asc" %>
-
+<br><br>
 <% @vehicles.each do |vehicle| %>
   <h3><%= link_to vehicle.name, "/vehicles/#{vehicle.id}" %></h3>
-  <p><%=button_to "Edit #{vehicle.name}", "`/vehicles/#{vehicle.id}/edit`", method: :get %></p>
+  <p><%=button_to "Edit #{vehicle.name}", "/vehicles/#{vehicle.id}/edit", method: :get %></p>
   <p><%=button_to "Delete #{vehicle.name}", "/vehicles/#{vehicle.id}", method: :delete %></p>
   <p>Repair Needed: <%= vehicle.need_repair %></p>
   <p>Repair Cost: <%= vehicle.repair_cost %></p>
