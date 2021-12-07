@@ -1,3 +1,4 @@
+<h3><%= link_to "Plumbers", "/plumbers" %> <%= link_to "PlumberShops", "/plumbershops"%></h3>
 <html>
   <head>
     <h1>All Plumbers<h1>
@@ -5,6 +6,7 @@
     <h3><li><%= plumber.name %></li></h3>
     <% end %>
   </head>
+  <h3><%= link_to "New Plumber", "/plumbershops/:id/plumbers/new" %></h3>
   <body style="background-color:powderblue;">
   </body>
 </html>

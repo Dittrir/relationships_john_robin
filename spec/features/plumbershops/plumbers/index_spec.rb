@@ -22,5 +22,19 @@ RSpec.describe 'plumbershops plumbers index' do
     expect(current_path).to eq("/plumbers/#{@plumber_1.id}")
   end
 
-  it 'shows the average'
+  it 'has a plumbers link' do 
+    visit "/plumbershops/#{@shop.id}/plumbers"
+
+    click_link "Plumbers"
+
+    expect(current_path).to eq("/plumbers")
+  end
+
+  it 'has a plumbershops link' do 
+    visit "/plumbershops/#{@shop.id}/plumbers"
+
+    click_link "PlumberShops"
+    
+    expect(current_path).to eq("/plumbershops")
+  end
 end

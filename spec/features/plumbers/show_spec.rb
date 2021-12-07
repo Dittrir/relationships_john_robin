@@ -28,4 +28,20 @@ RSpec.describe '' do
     expect(page).to_not have_content(@plumber_1.name)
     expect(page).to_not have_content(@plumber_3.name)
   end
+
+  it 'has a plumbers link' do 
+    visit "/plumbers/#{@plumber_2.id}"
+
+    click_link "Plumbers"
+
+    expect(current_path).to eq("/plumbers")
+  end
+
+  it 'has a plumbershops link' do 
+    visit "/plumbers/#{@plumber_2.id}"
+
+    click_link "PlumberShops"
+    
+    expect(current_path).to eq("/plumbershops")
+  end
 end

@@ -1,6 +1,6 @@
 class PlumbershopPlumbersController < ApplicationController 
   def index
-    plumbershop = Plumbershop.find(params[:plumbershop_id])
+    plumbershop = Plumbershop.find(params[:id])
     @plumbers = plumbershop.plumbers
   end
 end
