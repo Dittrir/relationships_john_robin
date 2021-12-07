@@ -51,9 +51,25 @@ RSpec.describe "Vehicles Index Page", type: :feature do
   end
 
   it 'allows the viewer to visit the child index page from autoshop vehicles index page' do
-    visit "autoshops/#{@shop_1.id}/vehicles"
+    visit "/vehicles"
 
     click_link('Go to Vehicles')
     expect(current_path).to eq('/vehicles')
+  end
+
+  it 'allows the viewer to edit each child' do
+    visit "/vehicles"
+
+    click_button("Edit #{@vehicle_1.name}")
+    expect(current_path).to eq("/vehicles/#{@vehicle_1.id}/edit")
+  end
+
+  it 'allows the viewer to delete each child' do
+    visit "/vehicles"
+
+    click_button("Delete #{@vehicle_1.name}")
+    expect(current_path).to eq("/vehicles")
+
+    expect(page).to_not have_content("#{@vehicle_1.name}")
   end
 end

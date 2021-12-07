@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.all.only_true_records
   end
 
   def show
