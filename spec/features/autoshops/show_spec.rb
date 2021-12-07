@@ -40,11 +40,4 @@ RSpec.describe "Autoshops Show Page", type: :feature do
 
     expect(page).to have_content("Number of Associated Children: 3")
   end
-
-  it 'viewer can see a link to take them to that parents child_table_name page'
-  #   visit "/autoshops/#{@shop_1.id}"
-  #
-  #   click_link('View the Vehicles Table')
-  #   expect(current_path).to eq("/autoshops/#{@shop_1.id}/vehicles_table")
-  # end
 end

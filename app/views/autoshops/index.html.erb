@@ -10,6 +10,6 @@
   <p>Created at: <%= autoshop.created_at %></p>
   <p>Updated at: <%= autoshop.updated_at %></p>
   <p><%=button_to "Edit #{autoshop.name}", "/autoshops/#{autoshop.id}/edit", method: :get %></p>
-  <p><%=button_to "Delete", "/autoshops/#{autoshop.id}", method: :delete %></p>
+  <p><%=button_to "Delete #{autoshop.name}", "/autoshops/#{autoshop.id}", method: :delete %></p>
 <% end %>
 <%= link_to "New Auto Shop", "/autoshops/new" %>

@@ -51,4 +51,20 @@ RSpec.describe "Autoshops Index Page", type: :feature do
     click_link('Go to Auto Shops')
     expect(current_path).to eq('/autoshops')
   end
+
+  it 'allows the viewer to edit each parent' do
+    visit "/autoshops"
+
+    click_button("Edit #{@shop_1.name}")
+    expect(current_path).to eq("/autoshops/#{@shop_1.id}/edit")
+  end
+
+  it 'allows the viewer to delete each parent' do
+    visit "/autoshops"
+
+    click_button("Delete #{@shop_1.name}")
+    expect(current_path).to eq("/autoshops")
+
+    expect(page).to_not have_content("#{@shop_1.name}")
+  end
 end
