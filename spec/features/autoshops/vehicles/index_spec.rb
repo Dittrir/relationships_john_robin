@@ -65,4 +65,13 @@ RSpec.describe 'Autoshops vehicles index' do
 
     expect(current_path).to eq("/vehicles/#{@vehicle_1.id}/edit")
   end
+
+  it 'allows the viewer to delete each child' do
+    visit "autoshops/#{@shop_1.id}/vehicles"
+
+    click_button("Delete #{@vehicle_1.name}")
+    expect(current_path).to eq("/vehicles")
+
+    expect(page).to_not have_content("#{@vehicle_1.name}")
+  end
 end
