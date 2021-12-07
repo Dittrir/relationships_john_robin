@@ -15,6 +15,16 @@ class PlumbersController < ApplicationController
     redirect_to '/plumbers'
   end
 
+  def edit 
+    @plumber = Plumber.find(params[:id])
+  end
+
+  def update 
+    plumber = Plumber.find(params[:id])
+    plumber.update(plumber_params)
+    redirect_to "/plumbers/#{plumber.id}"
+  end
+
   private
   def plumber_params 
     params.permit(:name, :license, :on_call, :years_experience)

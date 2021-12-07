@@ -1,0 +1,10 @@
+<%= form_with url: "/plumbers/#{@plumber.id}", method: :patch, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :license %>
+<%= form.text_field :license %>
+<p>On Call <%= form.check_box :on_call %></p>
+<%= form.label :years_experience %>
+<%= form.text_field :years_experience %>
+<%= form.submit "Update Plumber" %>
+<% end %>

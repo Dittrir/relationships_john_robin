@@ -8,6 +8,7 @@
     <h3><li>Years of Experience: <%= @plumber.years_experience %></li></h3>
     <h3><li>Created at: <%= @plumber.created_at %></li></h3>
     <h3><li>Updated at: <%= @plumber.updated_at %></li></h3>
+    <h3><%= link_to "Update Plumber", "/plumbers/#{@plumber.id}/edit" %></h3>
   </head>
   <body style="background-color:powderblue;">
   </body>

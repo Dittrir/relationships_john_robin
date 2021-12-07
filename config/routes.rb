@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   get '/plumbers/:id', to: 'plumbers#show'
   get 'plumbershops/:id/plumbers/new', to: 'plumbers#new'
   post '/plumbers', to: 'plumbers#create'
+  get '/plumbers/:id/edit', to: 'plumbers#edit'
+  patch '/plumbers/:id', to: 'plumbers#update'
 end
