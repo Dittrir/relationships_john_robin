@@ -1,0 +1,20 @@
+<a href="/parents">Back to Main</a>
+<a href="/autoshops">Go to Autoshops</a>
+<a href="/vehicles">Go to Vehicles</a>
+
+<%= form_with url: "/vehicles/#{@vehicle.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :need_repair %>
+  <%= form.check_box :need_repair %>
+
+  <%= form.label :repair_cost %>
+  <%= form.text_field :repair_cost %>
+
+  <%= form.submit "Update Vehicle" %>
+
+<% end %>
+
+<body style="background-color:powderblue;">
+</body>
