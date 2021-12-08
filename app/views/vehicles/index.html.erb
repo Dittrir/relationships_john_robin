@@ -3,6 +3,7 @@
 <a href="/vehicles">Go to Vehicles</a>
 
 <h1>Vehicles</h1>
+<a href="/vehicles/new">Add A Vehicle</a>
 <% @vehicles.each do |vehicle| %>
   <h3><a href="/vehicles/<%= vehicle.id %>"><%= vehicle.name %></a></h3>
   <p>Repair Needed: <%= vehicle.need_repair %></p>
