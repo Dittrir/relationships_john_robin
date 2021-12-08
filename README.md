@@ -248,7 +248,7 @@ Then I am brought back to the current index page with only the records that meet
 
 ### Usability
 
-[ ] done
+[x] done
 
 User Story 22, Parent Delete From Parent Index Page (x1)
 
@@ -258,7 +258,7 @@ Next to every parent, I see a link to delete that parent
 When I click the link
 I am returned to the Parent Index Page where I no longer see that parent
 
-[ ] done
+[x] done
 
 User Story 23, Child Delete From Childs Index Page (x1)
 

@@ -15,3 +15,11 @@
 <% end %>
 
 <%= link_to "Add Vehicle to Autoshop", "/autoshops/#{@autoshop.id}/vehicles/new" %>
+<%= form_with url: "/autoshops/#{@autoshop.id}/vehicles", method: :get, local: true do |form| %>
+
+<%= form.label :search, "Repair Cost More Than:" %>
+<%= form.text_field :search %>
+
+<%= form.submit "Submit" %>
+
+<% end %>

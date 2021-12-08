@@ -49,7 +49,7 @@ RSpec.describe "Autoshops Show Page", type: :feature do
     expect(page).to_not have_content("#{@shop_1.name}")
   end
 
-  it 'displays a link that allows the viewer to delete the parent' do
+  it 'displays a link that allows the viewer to edit the parent' do
     visit "/autoshops/#{@shop_1.id}"
 
     click_link("Edit #{@shop_1.name}")
