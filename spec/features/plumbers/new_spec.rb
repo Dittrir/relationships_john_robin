@@ -9,7 +9,7 @@ RSpec.describe 'create new plumbers' do
   end
 
   it 'can click the create a new plumber link' do 
-    visit '/plumbers' 
+    visit "/plumbershops/#{@shop_1.id}/plumbers" 
 
     click_link 'New Plumber' 
     
@@ -18,7 +18,6 @@ RSpec.describe 'create new plumbers' do
 
   it 'can create a plumber' do 
     visit "/plumbershops/#{@shop_1.id}/plumbers/new"
-
     fill_in('name', with: 'Jimmy')
     fill_in('license', with: "Residential")
     check 'on_call'
@@ -26,7 +25,7 @@ RSpec.describe 'create new plumbers' do
 
     click_button("Create Plumber")
 
-    expect(current_path).to eq('/plumbers')
+    expect(current_path).to eq("/plumbershops/#{@shop_1.id}/plumbers")
     expect(page).to have_content('Jimmy')
   end
 end
