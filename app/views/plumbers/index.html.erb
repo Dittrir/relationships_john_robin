@@ -10,6 +10,7 @@
     <p>Created At: <%= plumber.created_at %></p>
     <p>Updated At: <%= plumber.updated_at %></p>
     <p><%= link_to "Edit #{plumber.name}", "/plumbers/#{plumber.id}/edit" %></p>
+    <p><%= button_to "Delete Plumber #{plumber.name}", "/plumbers/#{plumber.id}", method: :delete %></p>
     <% end %>
   </head>
   <h3><%= link_to "New Plumber", "/plumbershops/:id/plumbers/new" %></h3>

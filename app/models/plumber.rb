@@ -8,4 +8,8 @@ class Plumber < ApplicationRecord
   def self.aplhabetical_order
     order(:name)
   end
+
+  def self.given_threshold(threshold)
+    where("years_experience > ?", threshold)
+  end
 end

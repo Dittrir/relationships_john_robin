@@ -53,5 +53,15 @@ RSpec.describe 'plumbershops plumbers index' do
     expect(current_path).to eq("/plumbershops/#{@shop.id}/plumbers")
     expect(@plumber_2.name).to appear_before(@plumber_1.name)
   end
+
+  it 'displays records over a given treshold' do 
+    visit "/plumbershops/#{@shop.id}/plumbers"
+
+    fill_in 'Search', with: 20
+    click_button 'Submit'
+
+    expect(page).to have_content(@plumber_2.name)
+    expect(page).to_not have_content(@plumber_1.name)
+  end
 end
 

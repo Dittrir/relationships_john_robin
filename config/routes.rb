@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   post '/plumbers', to: 'plumbers#create'
   get '/plumbers/:id/edit', to: 'plumbers#edit'
   patch '/plumbers/:id', to: 'plumbers#update'
+  delete '/plumbers/:id', to: 'plumbers#destroy'
 end

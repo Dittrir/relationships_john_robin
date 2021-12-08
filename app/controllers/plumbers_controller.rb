@@ -27,6 +27,12 @@ class PlumbersController < ApplicationController
     redirect_to "/plumbers/#{plumber.id}"
   end
 
+  def destroy
+    plumber = Plumber.find(params[:id])
+    plumber.destroy
+    redirect_to "/plumbers"
+  end
+
   private
   def plumber_params 
     params.permit(:name, :license, :on_call, :years_experience)
