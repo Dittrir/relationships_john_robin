@@ -236,7 +236,7 @@ and I am redirected to the child index page where I no longer see this child
 
 ### ActiveRecord
 
-[ ] done
+[x] done
 
 User Story 21, Display Records Over a Given Threshold (x2)
 

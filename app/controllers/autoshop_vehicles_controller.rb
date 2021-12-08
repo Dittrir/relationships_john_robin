@@ -4,8 +4,8 @@ class AutoshopVehiclesController < ApplicationController
 
     if params[:sort]
       @vehicles = @autoshop.vehicles.order_by_name
-    # elsif params[:search]
-    #   @vehicles = @autoshop.vehicles.return_more_than_value(params[:search])
+    elsif params[:search]
+      @vehicles = @autoshop.vehicles.return_more_than_value(params[:search])
     else
       @vehicles = @autoshop.vehicles
     end
