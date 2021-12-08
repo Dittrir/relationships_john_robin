@@ -1,5 +1,7 @@
 # Relationships
 
+Robin Dittrich and John Napier
+
 ## Learning Goals
 
 * Design a one to many relationship using a schema designer
