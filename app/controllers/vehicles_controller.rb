@@ -11,7 +11,8 @@ class VehiclesController < ApplicationController
   end
 
   def create
-    vehicle = Vehicle.create(vehicle_params)
+    @autoshop = Autoshop.find(params[:autoshop_id])
+    vehicle = @autoshop.vehicles.create(vehicle_params)
     redirect_to "/vehicles"
   end
 

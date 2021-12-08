@@ -2,6 +2,13 @@
 require 'rails_helper'
 
 RSpec.describe 'The Vehicle creation' do
+  before(:each) do
+    @shop_1 = Autoshop.create!(name: "Billy Bobs Repair Shop", open: true, vehicles_in_shop: 3)
+    @vehicle_1 = @shop_1.vehicles.create!(name: 'Chevy Silverado 3500', need_repair: true, repair_cost: 3500, autoshop_id: @shop_1.id)
+    @vehicle_2 = @shop_1.vehicles.create!(name: 'Mercedes Sprinter', need_repair: true, repair_cost: 800, autoshop_id: @shop_1.id)
+    @vehicle_3 = @shop_1.vehicles.create!(name: 'Kawasaki KLR 650', need_repair: false, repair_cost: 0, autoshop_id: @shop_1.id)
+  end
+
   it 'allows the user to return to the main page' do
     visit 'vehicles/new'
 
@@ -34,8 +41,8 @@ RSpec.describe 'The Vehicle creation' do
     fill_in('Name', with: 'Toyota Rav 4')
     check "Need repair"
     fill_in('Repair cost', with: 1400)
-    fill_in('Autoshop', with: 1)
-    click_button('Create Vehicle')
+    fill_in('Autoshop', with: @shop_1.id)
+    click_button 'Create Vehicle'
 
     expect(current_path).to eq("/vehicles")
     expect(page).to have_content('Toyota Rav 4')
