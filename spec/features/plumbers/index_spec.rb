@@ -43,4 +43,18 @@ RSpec.describe 'plumbers show page' do
     expect(page).to_not have_content(@plumber_1.name)
     expect(page).to_not have_content(@plumber_3.name)
   end
+
+  it 'has an edit button' do 
+    visit "/plumbers"
+    
+    expect(page).to have_link("Edit #{@plumber_2.name}")
+  end
+
+  it 'can click the edit button' do 
+    visit "/plumbers"
+
+    click_link "Edit #{@plumber_2.name}"
+
+    expect(current_path).to eq("/plumbers/#{@plumber_2.id}/edit")
+  end
 end

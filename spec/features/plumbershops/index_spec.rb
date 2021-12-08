@@ -48,7 +48,13 @@ RSpec.describe 'Plumber Shops' do
     expect(current_path).to eq("/plumbershops/new")
   end
 
-  it 'has an update button' do 
+  it 'has an edit button' do 
+    visit "/plumbershops" 
+
+    expect(page).to have_link("Edit #{@shop_1.name}")
+  end
+
+  it 'can click the edit button' do 
     visit "/plumbershops" 
 
     expect(page).to have_link("Edit #{@shop_1.name}")
