@@ -33,4 +33,19 @@ RSpec.describe "Vehicles Show Page", type: :feature do
 
     expect(page).to have_content(@vehicle_1.name)
   end
+
+  it 'displays a link that allows the viewer to delete the child' do
+    visit "/vehicles/#{@vehicle_1.id}"
+
+    click_link("Delete #{@vehicle_1.name}")
+    expect(current_path).to eq("/vehicles")
+    expect(page).to_not have_content("#{@vehicle_1.name}")
+  end
+
+  it 'displays a link that allows the viewer to edit the child' do
+    visit "/vehicles/#{@vehicle_1.id}"
+
+    click_link("Edit #{@vehicle_1.name}")
+    expect(current_path).to eq("/vehicles/#{@vehicle_1.id}/edit")
+  end
 end

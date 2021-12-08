@@ -175,7 +175,7 @@ As a visitor
 When I visit the child index
 Then I only see records where the boolean column is `true`
 
-[ ] done
+[x] done
 
 User Story 16, Sort Parent's Children in Alphabetical Order by name (x2)
 
@@ -186,7 +186,7 @@ When I click on the link
 I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
 Usability
 
-[ ] done
+[x] done
 
 User Story 17, Parent Update From Parent Index Page (x2)
 
@@ -196,7 +196,7 @@ Next to every parent, I see a link to edit that parent's info
 When I click the link
 I should be taken to that parents edit page where I can update its information just like in User Story 4
 
-[ ] done
+[x] done
 
 User Story 18, Child Update From Childs Index Page (x1)
 
@@ -210,7 +210,7 @@ I should be taken to that `child_table_name` edit page where I can update its in
 
 ### CRUD
 
-[ ] done
+[x] done
 
 User Story 19, Parent Delete (x2)
 
@@ -222,7 +222,7 @@ Then a 'DELETE' request is sent to '/parents/:id',
 the parent is deleted, and all child records are deleted
 and I am redirected to the parent index page where I no longer see this parent
 
-[ ] done
+[x] done
 
 User Story 20, Child Delete (x2)
 
@@ -236,7 +236,7 @@ and I am redirected to the child index page where I no longer see this child
 
 ### ActiveRecord
 
-[ ] done
+[x] done
 
 User Story 21, Display Records Over a Given Threshold (x2)
 
@@ -248,7 +248,7 @@ Then I am brought back to the current index page with only the records that meet
 
 ### Usability
 
-[ ] done
+[x] done
 
 User Story 22, Parent Delete From Parent Index Page (x1)
 
@@ -258,7 +258,7 @@ Next to every parent, I see a link to delete that parent
 When I click the link
 I am returned to the Parent Index Page where I no longer see that parent
 
-[ ] done
+[x] done
 
 User Story 23, Child Delete From Childs Index Page (x1)
 

@@ -67,4 +67,21 @@ RSpec.describe "Autoshops Index Page", type: :feature do
 
     expect(page).to_not have_content("#{@shop_1.name}")
   end
+
+  it 'can create a new vehicle' do
+    visit 'vehicles'
+
+    click_link('Add A Vehicle')
+    expect(current_path).to eq('/vehicles/new')
+
+    fill_in('Name', with: 'Toyota Rav 4')
+    check "Need repair"
+    fill_in('Repair cost', with: 1400)
+    fill_in('Autoshop', with: @shop_1.id)
+    click_button 'Create Vehicle'
+
+    expect(current_path).to eq("/vehicles")
+    expect(page).to have_content('Toyota Rav 4')
+    expect(page).to have_content(1400)
+  end
 end

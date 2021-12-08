@@ -1,5 +1,5 @@
 class Autoshop < ApplicationRecord
-  has_many :vehicles
+  has_many :vehicles, dependent: :destroy
 
   def self.sort_created_at
     Autoshop.all.order(:created_at)

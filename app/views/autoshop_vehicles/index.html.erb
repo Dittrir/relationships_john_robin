@@ -5,7 +5,9 @@
 <%= link_to "Sort vehicles alphabetically", "/autoshops/#{@autoshop.id}/vehicles?sort=asc" %>
 <br><br>
 <% @vehicles.each do |vehicle| %>
-  <%= link_to vehicle.name, "/vehicles/#{vehicle.id}" %>
+  <h3><%= link_to vehicle.name, "/vehicles/#{vehicle.id}" %></h3>
+  <p><%=button_to "Edit #{vehicle.name}", "/vehicles/#{vehicle.id}/edit", method: :get %></p>
+  <p><%=button_to "Delete #{vehicle.name}", "/vehicles/#{vehicle.id}", method: :delete %></p>
   <p>Repair Needed: <%= vehicle.need_repair %></p>
   <p>Repair Cost: <%= vehicle.repair_cost %></p>
   <p>Created at: <%= vehicle.created_at %></p>
@@ -13,3 +15,14 @@
 <% end %>
 
 <%= link_to "Add Vehicle to Autoshop", "/autoshops/#{@autoshop.id}/vehicles/new" %>
+<%= form_with url: "/autoshops/#{@autoshop.id}/vehicles", method: :get, local: true do |form| %>
+
+<%= form.label :search, "Repair Cost More Than:" %>
+<%= form.text_field :search %>
+
+<%= form.submit "Submit" %>
+
+<% end %>
+
+<body style="background-color:powderblue;">
+</body>

@@ -40,4 +40,19 @@ RSpec.describe "Autoshops Show Page", type: :feature do
 
     expect(page).to have_content("Number of Associated Children: 3")
   end
+
+  it 'displays a link that allows the viewer to delete the parent' do
+    visit "/autoshops/#{@shop_1.id}"
+
+    click_link("Delete #{@shop_1.name}")
+    expect(current_path).to eq("/autoshops")
+    expect(page).to_not have_content("#{@shop_1.name}")
+  end
+
+  it 'displays a link that allows the viewer to edit the parent' do
+    visit "/autoshops/#{@shop_1.id}"
+
+    click_link("Edit #{@shop_1.name}")
+    expect(current_path).to eq("/autoshops/#{@shop_1.id}/edit")
+  end
 end

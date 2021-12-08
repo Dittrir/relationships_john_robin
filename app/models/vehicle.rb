@@ -8,4 +8,8 @@ class Vehicle < ApplicationRecord
   def self.order_by_name
     Vehicle.order(name: :asc)
   end
+
+  def self.return_more_than_value(given_value)
+    Vehicle.where("repair_cost > ?", given_value)
+  end
 end
