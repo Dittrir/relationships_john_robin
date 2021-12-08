@@ -7,6 +7,14 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.find(params[:id])
   end
 
+  def new
+  end
+
+  def create
+    vehicle = Vehicle.create(vehicle_params)
+    redirect_to "/vehicles"
+  end
+
   def edit
     @vehicle = Vehicle.find(params[:id])
   end
@@ -25,6 +33,6 @@ class VehiclesController < ApplicationController
 
 private
   def vehicle_params
-    params.permit(:name, :need_repair, :repair_cost)
+    params.permit(:name, :need_repair, :repair_cost, :autoshop_id)
   end
 end
