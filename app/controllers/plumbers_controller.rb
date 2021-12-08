@@ -15,7 +15,7 @@ class PlumbersController < ApplicationController
     @plumbershop = Plumbershop.find(params[:id])
     plumber = @plumbershop.plumbers.create!(plumber_params)
      
-    redirect_to "/plumbershop/#{@plumbershop.id}/plumbers"
+    redirect_to "/plumbershops/#{@plumbershop.id}/plumbers"
   end
 
   def edit 
