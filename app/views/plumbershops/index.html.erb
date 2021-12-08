@@ -5,6 +5,7 @@
     <% @plumbershops.each do |shop| %>
     <h3><li><%= shop.name %></li></h3>
     <p><%= link_to "Edit #{shop.name}", "/plumbershops/#{shop.id}/edit" %></p>
+    <p><%= button_to "Delete #{shop.name}", "/plumbershops" %></p>
     <% end %>
     <h3><%= link_to "New PlumberShop", "/plumbershops/new" %></h3>
   </head>

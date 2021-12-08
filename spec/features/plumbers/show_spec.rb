@@ -42,4 +42,10 @@ RSpec.describe '' do
      
     expect(page).to have_link("Update Plumber")
   end
+
+  it 'has a delete plumber button' do 
+    visit "/plumbers/#{@plumber_2.id}"
+
+    expect(page).to have_button("Delete Plumber")
+  end
 end

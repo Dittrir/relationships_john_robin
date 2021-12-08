@@ -63,5 +63,11 @@ RSpec.describe 'Plumber Shops' do
 
     expect(current_path).to eq("/plumbershops/#{@shop_1.id}/edit")
   end
+
+  it 'has a delete button' do 
+    visit "/plumbershops"
+
+    expect(page).to have_button("Delete #{@shop_1.name}")
+  end
 end
 
