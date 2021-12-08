@@ -196,7 +196,7 @@ Next to every parent, I see a link to edit that parent's info
 When I click the link
 I should be taken to that parents edit page where I can update its information just like in User Story 4
 
-[ ] done
+[x] done
 
 User Story 18, Child Update From Childs Index Page (x1)
 
