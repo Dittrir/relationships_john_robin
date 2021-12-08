@@ -1,4 +1,3 @@
-#parents/index_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'parents index page' do
@@ -6,9 +5,9 @@ RSpec.describe 'parents index page' do
     visit "/parents"
     expect(page).to have_content("Here are our parent records")
     expect(page).to have_link("Auto Shops")
-    expect(page).to have_link("Add")
+    expect(page).to have_link("New Auto Shop")
     expect(page).to have_link("Vehicles")
-    expect(page).to have_link("Add")
+    expect(page).to have_link("Add A Vehicle")
     expect(page).to have_link("Plumber Shops")
     expect(page).to have_link("Add")
     expect(page).to have_link("Plumbers")
