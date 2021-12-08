@@ -1,0 +1,16 @@
+<h3><%= link_to "Plumbers", "/plumbers" %> <%= link_to "PlumberShops", "/plumbershops"%></h3>
+<html>
+  <head>
+    <h1><%= @plumber.name %></h1>
+    <h3><li>id: <%= @plumber.id %></li></h3>
+    <h3><li>Current License: <%= @plumber.license %></li></h3>
+    <h3><li>On call: <%= @plumber.on_call %></li></h3>
+    <h3><li>Years of Experience: <%= @plumber.years_experience %></li></h3>
+    <h3><li>Created at: <%= @plumber.created_at %></li></h3>
+    <h3><li>Updated at: <%= @plumber.updated_at %></li></h3>
+    <h3><%= link_to "Update Plumber", "/plumbers/#{@plumber.id}/edit" %></h3>
+    <p><%= button_to "Delete Plumber #{@plumber.name}", "/plumbers/#{@plumber.id}", method: :delete %></p>
+  </head>
+  <body style="background-color:powderblue;">
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<h3><%= link_to "Plumbers", "/plumbers" %> <%= link_to "PlumberShops", "/plumbershops"%></h3>
+<html>
+  <head>
+    <h1>All Plumbers<h1>
+    <% @plumbers.each do |plumber| %>
+    <h3><li><%= link_to "#{plumber.name}", "/plumbers/#{plumber.id}" %></li></h3>
+    <p>License: <%= plumber.license %></p>
+    <p>On Call: <%= plumber.on_call %></p>
+    <p>Years of Experience: <%= plumber.years_experience %></p>
+    <p>Created At: <%= plumber.created_at %></p>
+    <p>Updated At: <%= plumber.updated_at %></p>
+    <p><%= link_to "Edit #{plumber.name}", "/plumbers/#{plumber.id}/edit" %></p>
+    <p><%= button_to "Delete Plumber #{plumber.name}", "/plumbers/#{plumber.id}", method: :delete %></p>
+    <% end %>
+  </head>
+  <body style="background-color:powderblue;">
+  </body>
+</html>

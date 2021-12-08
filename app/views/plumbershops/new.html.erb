@@ -1,0 +1,11 @@
+<%= form_with url: '/plumbershops', method: :post, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<p>Service Offered <%= form.check_box :service_offered %></p>
+<%= form.label :fleet_vehicles %>
+<%= form.text_field :fleet_vehicles %><br><br>
+<%= form.submit "Create PlumberShop" %>
+<% end %>
+
+<body style="background-color:powderblue;">
+  </body>

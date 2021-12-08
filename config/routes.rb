@@ -2,9 +2,29 @@ Rails.application.routes.draw do
 
   #Main Page
   get '/', to: 'welcome#index'
-
+  
   #Parent Directory
   get '/parents', to: 'parents#index'
+  
+  #Plumbershops
+  get '/plumbershops', to: 'plumbershops#index'
+  get '/plumbershops/new', to: 'plumbershops#new'
+  get '/plumbershops/:id', to: 'plumbershops#show'
+  get '/plumbershops/:id/plumbers', to: 'plumbershop_plumbers#index'
+  post '/plumbershops', to: 'plumbershops#create'
+  get '/plumbershops/:id/edit', to: 'plumbershops#edit'
+  patch '/plumbershops/:id', to: 'plumbershops#update'
+  delete '/plumbershops/:id', to: 'plumbershops#destroy'
+  delete '/plumbershops', to: 'plumbershops#destroy'
+  
+  #Plumbers
+  get '/plumbers', to: 'plumbers#index'
+  get '/plumbers/:id', to: 'plumbers#show'
+  get '/plumbershops/:id/plumbers/new', to: 'plumbers#new'
+  post '/plumbershops/:id/plumbers', to: 'plumbers#create'
+  get '/plumbers/:id/edit', to: 'plumbers#edit'
+  patch '/plumbers/:id', to: 'plumbers#update'
+  delete '/plumbers/:id', to: 'plumbers#destroy'
 
   #Autoshops
   get '/autoshops', to: 'autoshops#index'
@@ -28,5 +48,4 @@ Rails.application.routes.draw do
   get '/vehicles/:id/edit', to: 'vehicles#edit'
   patch '/vehicles/:id', to: 'vehicles#update'
   delete '/vehicles/:id', to: 'vehicles#destroy'
-
 end

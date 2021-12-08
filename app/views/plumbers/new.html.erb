@@ -1,0 +1,13 @@
+<%= form_with url: "/plumbershops/#{@plumbershop.id}/plumbers", method: :post, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :license %>
+<%= form.text_field :license %>
+<p>On Call <%= form.check_box :on_call %></p>
+<%= form.label :years_experience %>
+<%= form.text_field :years_experience %>
+<%= form.submit "Create Plumber" %>
+<% end %>
+
+<body style="background-color:powderblue;">
+  </body>
