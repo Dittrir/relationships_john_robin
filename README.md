@@ -210,7 +210,7 @@ I should be taken to that `child_table_name` edit page where I can update its in
 
 ### CRUD
 
-[ ] done
+[x] done
 
 User Story 19, Parent Delete (x2)
 
@@ -222,7 +222,7 @@ Then a 'DELETE' request is sent to '/parents/:id',
 the parent is deleted, and all child records are deleted
 and I am redirected to the parent index page where I no longer see this parent
 
-[ ] done
+[x] done
 
 User Story 20, Child Delete (x2)
 

@@ -3,9 +3,8 @@
 <a href="/vehicles">Go to Vehicles</a>
 
 <h1><%= @autoshop.name %></h1>
-<p><%=button_to "Edit #{@autoshop.name}", "/autoshops/#{@autoshop.id}/edit", method: :get %></p>
+<p><%=link_to "Edit #{@autoshop.name}", "/autoshops/#{@autoshop.id}/edit", method: :get %></p>
 <p><%=link_to "Delete #{@autoshop.name}", "/autoshops/#{@autoshop.id}", method: :delete %></p>
-<br><br>
 <a href="/autoshops/<%= @autoshop.id %>/vehicles">Vehicles in Shop</a>
 <p>Number of Associated Children: <%= @autoshop.associated_children_count %></p>
 <p>Open: <%= @autoshop.open %></p>
