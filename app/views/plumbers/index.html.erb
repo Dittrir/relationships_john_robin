@@ -3,7 +3,7 @@
   <head>
     <h1>All Plumbers<h1>
     <% @plumbers.each do |plumber| %>
-    <h3><li><%= plumber.name %></li></h3>
+    <h3><li><%= link_to "#{plumber.name}", "/plumbers/#{plumber.id}" %></li></h3>
     <p>License: <%= plumber.license %></p>
     <p>On Call: <%= plumber.on_call %></p>
     <p>Years of Experience: <%= plumber.years_experience %></p>
@@ -13,7 +13,6 @@
     <p><%= button_to "Delete Plumber #{plumber.name}", "/plumbers/#{plumber.id}", method: :delete %></p>
     <% end %>
   </head>
-  <h3><%= link_to "New Plumber", "/plumbershops/:id/plumbers/new" %></h3>
   <body style="background-color:powderblue;">
   </body>
 </html>

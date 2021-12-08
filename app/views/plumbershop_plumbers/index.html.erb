@@ -10,6 +10,7 @@
 <p><%= button_to "Delete #{plumber.name}", "/plumbers/#{plumber.id}", method: :delete %></p>
 <% end %>
 
+<h3><%= link_to "New Plumber", "/plumbershops/#{@plumbershop.id}/plumbers/new" %></h3>
 <%= form_with url: "/plumbershops/#{@plumbershop.id}/plumbers", method: :get, local: true do |form| %>
 <%= form.label :search, "Search" %>
 <%= form.text_field :search %>

@@ -1,20 +1,21 @@
 class PlumbersController < ApplicationController
   def index
-    @plumbers = Plumber.all.on_call?
+    @plumbers = Plumber.all.on_call?    
   end
 
   def show 
     @plumber = Plumber.find(params[:id])
   end
 
-  def new; end
+  def new
+    @plumbershop = Plumbershop.find(params[:id])
+  end
 
   def create
-    plumbershop = Plumbershop.create!(name: "IPS", service_offered: true, fleet_vehicles: 10)
-    plumber = plumbershop.plumbers.create!(plumber_params)
-    plumber.save
+    @plumbershop = Plumbershop.find(params[:id])
+    plumber = @plumbershop.plumbers.create!(plumber_params)
      
-    redirect_to '/plumbers'
+    redirect_to "/plumbershop/#{@plumbershop.id}/plumbers"
   end
 
   def edit 
@@ -22,9 +23,9 @@ class PlumbersController < ApplicationController
   end
 
   def update 
-    plumber = Plumber.find(params[:id])
-    plumber.update(plumber_params)
-    redirect_to "/plumbers/#{plumber.id}"
+    @plumber = Plumber.find(params[:id])
+    @plumber.update(plumber_params)
+    redirect_to "/plumbers/#{@plumber.id}"
   end
 
   def destroy

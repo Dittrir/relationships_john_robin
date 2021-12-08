@@ -22,9 +22,9 @@ class PlumbershopsController < ApplicationController
   end
 
   def update
-    plumbershop = Plumbershop.find(params[:id])
-    plumbershop.update(plumbershop_params)
-    redirect_to "/plumbershops/#{plumbershop.id}"
+    @plumbershop = Plumbershop.find(params[:id])
+    @plumbershop.update(plumbershop_params)
+    redirect_to "/plumbershops/#{@plumbershop.id}"
   end
 
   def destroy 

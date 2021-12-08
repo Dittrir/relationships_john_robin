@@ -13,7 +13,14 @@ RSpec.describe 'plumbers show page' do
     expect(page).to have_content(@plumber_2.name)
   end
 
-  
+  it 'can click to the name of the plumber to go to the show page' do 
+    visit '/plumbers' 
+    
+    click_link "#{@plumber_2.name}"
+
+    expect(current_path).to eq("/plumbers/#{@plumber_2.id}")
+  end
+
   it 'I see a link at the top of the page that takes me to plumbers index' do 
     visit "/plumbers"
     
@@ -31,7 +38,7 @@ RSpec.describe 'plumbers show page' do
   end
 
   it 'has a link to add plumbers' do 
-    visit "/plumbers"
+    visit "/plumbershops/#{@shop_1.id}/plumbers"
 
     expect(page).to have_link("New Plumber")
   end

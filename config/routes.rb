@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 
   get '/plumbers', to: 'plumbers#index'
   get '/plumbers/:id', to: 'plumbers#show'
-  get 'plumbershops/:id/plumbers/new', to: 'plumbers#new'
-  post '/plumbers', to: 'plumbers#create'
+  get '/plumbershops/:id/plumbers/new', to: 'plumbers#new'
+  post '/plumbershops/:id/plumbers', to: 'plumbers#create'
   get '/plumbers/:id/edit', to: 'plumbers#edit'
   patch '/plumbers/:id', to: 'plumbers#update'
   delete '/plumbers/:id', to: 'plumbers#destroy'

@@ -15,6 +15,14 @@ RSpec.describe 'Plumber Shops' do
     expect(page).to have_content(@shop_3.name)
   end
 
+  it 'can click name link to go to show page' do 
+    visit "/plumbershops"
+
+    click_link "#{@shop_1.name}"
+
+    expect(current_path).to eq("/plumbershops/#{@shop_1.id}")
+  end
+
   it "sorts plumber shops in the order they were created" do 
     visit "/plumbershops"
 
