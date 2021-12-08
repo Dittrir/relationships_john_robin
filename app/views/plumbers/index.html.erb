@@ -4,6 +4,11 @@
     <h1>All Plumbers<h1>
     <% @plumbers.each do |plumber| %>
     <h3><li><%= plumber.name %></li></h3>
+    <p>License: <%= plumber.license %></p>
+    <p>On Call: <%= plumber.on_call %></p>
+    <p>Years of Experience: <%= plumber.years_experience %></p>
+    <p>Created At: <%= plumber.created_at %></p>
+    <p>Updated At: <%= plumber.updated_at %></p>
     <% end %>
   </head>
   <h3><%= link_to "New Plumber", "/plumbershops/:id/plumbers/new" %></h3>

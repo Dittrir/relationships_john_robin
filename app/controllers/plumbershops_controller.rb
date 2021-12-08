@@ -12,6 +12,8 @@ class PlumbershopsController < ApplicationController
 
   def create 
     plumbershop = Plumbershop.create!(plumbershop_params)
+    plumbershop.save 
+    
     redirect_to "/plumbershops"
   end
 

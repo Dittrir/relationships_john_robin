@@ -37,4 +37,21 @@ RSpec.describe 'plumbershops plumbers index' do
     
     expect(current_path).to eq("/plumbershops")
   end
+
+  it 'has a link to aplhabetically sort the plumbers' do 
+    visit "/plumbershops/#{@shop.id}/plumbers"
+
+    expect(page).to have_link("Alphabetize Plumbers")
+    expect(current_path).to eq("/plumbershops/#{@shop.id}/plumbers")
+  end
+
+  it 'can click link to aplhabetically sort the plumbers' do 
+    visit "/plumbershops/#{@shop.id}/plumbers"
+
+    click_link "Alphabetize Plumbers"
+
+    expect(current_path).to eq("/plumbershops/#{@shop.id}/plumbers")
+    expect(@plumber_2.name).to appear_before(@plumber_1.name)
+  end
 end
+

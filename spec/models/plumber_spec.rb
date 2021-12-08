@@ -13,4 +13,8 @@ RSpec.describe Plumber do
   it 'only lists the plumbers that return true for on_call' do 
     expect(Plumber.on_call?).to eq([@plumber_2])
   end
+
+  it 'can alphabetize the plumbers' do 
+    expect(Plumber.aplhabetical_order).to eq([@plumber_3, @plumber_1, @plumber_2])
+  end
 end
