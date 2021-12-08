@@ -27,6 +27,13 @@ class PlumbershopsController < ApplicationController
     redirect_to "/plumbershops/#{plumbershop.id}"
   end
 
+  def destroy 
+    plumbershop = Plumbershop.find(params[:id])
+    plumbershop.destroy
+    
+    redirect_to "/plumbershops"
+  end
+
   private
   def plumbershop_params
     params.permit(:name, :service_offered, :fleet_vehicles)

@@ -9,6 +9,7 @@
     <h3><li>Created at: <%= @plumbershop.created_at %></li></h3>
     <h3><li>Updated at: <%= @plumbershop.updated_at %></li></h3>
     <h3><%= link_to "Update PlumberShop", "/plumbershops/#{@plumbershop.id}/edit" %></h3>
+    <h3><%= button_to "Delete PlumberShop", "/plumbershops/#{@plumbershop.id}", method: :delete %></h3>
   </head>
   <body style="background-color:powderblue;">
   </body>

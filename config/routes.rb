@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/plumbershops', to: 'plumbershops#create'
   get '/plumbershops/:id/edit', to: 'plumbershops#edit'
   patch '/plumbershops/:id', to: 'plumbershops#update'
+  delete '/plumbershops/:id', to: 'plumbershops#destroy'
 
   get '/plumbers', to: 'plumbers#index'
   get '/plumbers/:id', to: 'plumbers#show'
