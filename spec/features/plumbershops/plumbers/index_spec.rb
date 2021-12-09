@@ -57,7 +57,7 @@ RSpec.describe 'plumbershops plumbers index' do
   it 'displays records over a given treshold' do 
     visit "/plumbershops/#{@shop.id}/plumbers"
 
-    fill_in 'Search', with: 20
+    fill_in 'Desired Years Of Experience', with: 20
     click_button 'Submit'
 
     expect(page).to have_content(@plumber_2.name)

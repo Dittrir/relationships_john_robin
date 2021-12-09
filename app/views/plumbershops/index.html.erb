@@ -1,9 +1,10 @@
-<h3><%= link_to "Plumbers", "/plumbers" %> <%= link_to "PlumberShops", "/plumbershops"%><%= link_to "Back to Main", "/parents" %></h3>
+<h3><%= link_to "Plumbers", "/plumbers" %> <%= link_to "PlumberShops", "/plumbershops"%> <%= link_to "Back to Main", "/parents" %></h3>
 <html>
   <head>
     <h1>All Plumber Shops</h1>
     <% @plumbershops.each do |shop| %>
     <h3><li><%= link_to "#{shop.name}", "/plumbershops/#{shop.id}" %></li></h3>
+    <p><%= link_to "#{shop.name} Plumbers", "/plumbershops/#{shop.id}/plumbers" %></p>
     <p><%= link_to "Edit #{shop.name}", "/plumbershops/#{shop.id}/edit" %></p>
     <p><%= button_to "Delete #{shop.name}", "/plumbershops/#{shop.id}", method: :delete %></p>
     <% end %>
