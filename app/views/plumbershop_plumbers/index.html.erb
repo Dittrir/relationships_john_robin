@@ -1,4 +1,4 @@
-<h3><%= link_to "Plumbers", "/plumbers" %> <%= link_to "PlumberShops", "/plumbershops"%></h3>
+<h3><%= link_to "Plumbers", "/plumbers" %> <%= link_to "PlumberShops", "/plumbershops"%><%= link_to "Back to Main", "/parents" %></h3>
 <h3><%= link_to "Alphabetize Plumbers", "/plumbershops/#{@plumbershop.id}/plumbers?sort=asc" %></h3>
 <% @plumbers.each do |plumber| %>
 <h3><li><%= link_to "#{plumber.name}", "/plumbers/#{plumber.id}" %></li></h3>
